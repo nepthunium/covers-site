@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Environmental - Cover Songs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 id="titlething">Environmental - Cover Songs</h1>
+
+    <!-- Upload Song Section -->
+    <div id="upload-song">
+        <h2 id="upload">Upload a hoe!</h2>
+        <input type="file" id="file-upload" accept="audio/*">
+        <input type="text" id="song-title" placeholder="Song Title">
+        <input type="text" id="song-artist" placeholder="Artist">
+        <input type="text" id="song-album" placeholder="Album">
+        <input type="file" id="album-cover" accept="image/*">
+        <button onclick="uploadSong()">upload</button>
+    </div>
+
+    <div id="song-list"></div>
+
+    <div id="player-container" class="sticky-player">
+        <div id="player-info">
+            <img id="player-cover" class="album-cover" src="default_cover.png" alt="Cover">
+            <div id="player-details">
+                <strong id="player-title"></strong><br>
+                <span id="player-artist"></span><span id="colon">: </span><span id="player-album"></span>
+            </div>
+        </div>
+
+        <div id="player-controls">
+            <button onclick="togglePlay()">
+                <img src="play.png" alt="Play" id="play-button">
+            </button>
+            <button onclick="playNext()">
+                <img src="skip.png" alt="Next" id="next-button">
+            </button>
+        </div>
+    </div>
+
+    <div id="song-data-modal" class="modal">
+        <div class="modal-content">
+            <span id="close-modal" class="close">&times;</span>
+            <div id="song-modal-details">
+                <img id="modal-cover" class="album-cover" src="default_cover.png" alt="Album Cover">
+                <div id="modal-song-info">
+                    <h3 id="modal-title"></h3>
+                    <div id="modal-artist-display">
+                        <span id="modal-artist"></span>
+                        <span id="modal-colon">:&nbsp;</span>
+                        <span id="modal-album"></span>
+                    </div>
+                    <div id="modal-waveform">
+                        <span id="prog1">00:00</span>
+                        <span id="waveform"></span>
+                        <span id="prog2">00:00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/wavesurfer.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
